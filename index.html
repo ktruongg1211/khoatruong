@@ -1,11 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Giới Thiệu Thành Viên</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div class="navbar">
+        <a href="#">Trang chủ</a>
+        <a href="#">Giới thiệu</a>
+        <a href="#">Thành viên</a>
+        <a href="#">Liên hệ</a>
+    </div>
+    <h2>Thành Viên Của Nhóm</h2>
+    <div class="container" id="teamContainer"></div>
+    <script>
+        const members = [
+            { name: "Phan Võ Khoa Trường", role: "Trưởng Nhóm", img: "https://via.placeholder.com/100", link: "khoatruong.html" },
+            { name: "Phan Công Được", role: "Thành viên", img: "https://via.placeholder.com/100" },
+            { name: "Phạm Đình Văn", role: "Thành viên", img: "https://via.placeholder.com/100" },
+            { name: "Hồ Hoàng Hiệp", role: "Thành viên", img: "https://via.placeholder.com/100" },
+        ];
+        const container = document.getElementById("teamContainer");
+        members.forEach(member => {
+            const div = document.createElement("div");
+            div.classList.add("member");
+            div.innerHTML = `
+                <img src="${member.img}" alt="${member.name}">
+                <h3><a href = '${member.link}'>${member.name}</a></h3>
+                <p>${member.role}</p>
+            `;
+            container.appendChild(div);
+        });
+    </script>
 </body>
 </html>
